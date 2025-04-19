@@ -1,0 +1,15 @@
+[project]
+name = "rh_framepack"
+description = "This is a ComfyUI plug-in for lllyasviel/FramePack, easy to use"
+version = "1.0.0"
+license = {file = "LICENSE"}
+dependencies = ["accelerate>=1.6.0", "diffusers>=0.33.1", "transformers>=4.46.2", "scipy>=1.12.0", "torchsde>=0.2.6", "einops", "safetensors"]
+
+[project.urls]
+Repository = "https://github.com/HM-RunningHub/ComfyUI_RH_FramePack"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI_RH_FramePack"
+Icon = ""
