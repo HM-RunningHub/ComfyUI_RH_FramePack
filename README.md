@@ -1,8 +1,8 @@
 # FramePack for ComfyUI
 
 **20250506 Update:** Added support for `FramePack_F1`.
-- **Download F1 Workflow (中文)**: [https://www.runninghub.cn/post/1919141028262252546](https://www.runninghub.cn/post/1919141028262252546)
 - **Download F1 Workflow (English)**: [https://www.runninghub.ai/post/1919141028262252546](https://www.runninghub.ai/post/1919141028262252546)
+- **Download F1 Workflow (中文)**: [https://www.runninghub.cn/post/1919141028262252546](https://www.runninghub.cn/post/1919141028262252546)
 
 **20250421 Update:** Added support for first/last frame image-to-video generation from TTPlanetPig  
 [TTPlanetPig](https://github.com/TTPlanetPig) https://github.com/lllyasviel/FramePack/pull/167 
@@ -125,3 +125,5 @@ comfyui/models/
       ├── config.json
       └── diffusion_pytorch_model.safetensors
 ```
+![image](https://github.com/user-attachments/assets/7230b594-441f-45d9-bd0c-dedf7df11888)
+
