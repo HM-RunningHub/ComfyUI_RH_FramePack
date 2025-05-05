@@ -75,55 +75,56 @@ This is a simple implementation of https://github.com/lllyasviel/FramePack. If t
 4. **File Structure After Download**
 ```
 comfyui/models/
-  flux_redux_bfl
-  ├── feature_extractor
-  │   └── preprocessor_config.json
-  ├── image_embedder
-  │   ├── config.json
-  │   └── diffusion_pytorch_model.safetensors
-  ├── image_encoder
-  │   ├── config.json
-  │   └── model.safetensors
-  ├── model_index.json
-  └── README.md
-  FramePackF1_HY
-  ├── config.json  # Example structure, actual files might differ
-  └── diffusion_pytorch_model.safetensors # Example structure
-  FramePackI2V_HY
-  ├── config.json
-  ├── diffusion_pytorch_model-00001-of-00003.safetensors
-  ├── diffusion_pytorch_model-00002-of-00003.safetensors
-  ├── diffusion_pytorch_model-00003-of-00003.safetensors
-  ├── diffusion_pytorch_model.safetensors.index.json
-  └── README.md
-  HunyuanVideo
-  ├── config.json
-  ├── model_index.json
-  ├── README.md
-  ├── scheduler
-  │   └── scheduler_config.json
-  ├── text_encoder
-  │   ├── config.json
-  │   ├── model-00001-of-00004.safetensors
-  │   ├── model-00002-of-00004.safetensors
-  │   ├── model-00003-of-00004.safetensors
-  │   ├── model-00004-of-00004.safetensors
-  │   └── model.safetensors.index.json
-  ├── text_encoder_2
-  │   ├── config.json
-  │   └── model.safetensors
-  ├── tokenizer
-  │   ├── special_tokens_map.json
-  │   ├── tokenizer_config.json
-  │   └── tokenizer.json
-  ├── tokenizer_2
-  │   ├── merges.txt
-  │   ├── special_tokens_map.json
-  │   ├── tokenizer_config.json
-  │   └── vocab.json
-  └── vae
-      ├── config.json
-      └── diffusion_pytorch_model.safetensors
+FramePackF1_HY
+├── config.json
+├── diffusion_pytorch_model-00001-of-00003.safetensors
+├── diffusion_pytorch_model-00002-of-00003.safetensors
+├── diffusion_pytorch_model-00003-of-00003.safetensors
+├── diffusion_pytorch_model.safetensors.index.json
+└── down.py
+FramePackI2V_HY
+├── config.json
+├── diffusion_pytorch_model-00001-of-00003.safetensors
+├── diffusion_pytorch_model-00002-of-00003.safetensors
+├── diffusion_pytorch_model-00003-of-00003.safetensors
+└── diffusion_pytorch_model.safetensors.index.json
+flux_redux_bfl
+├── feature_extractor
+│   └── preprocessor_config.json
+├── image_embedder
+│   ├── config.json
+│   └── diffusion_pytorch_model.safetensors
+├── image_encoder
+│   ├── config.json
+│   └── model.safetensors
+└── model_index.json
+HunyuanVideo
+├── config.json
+├── model_index.json
+├── scheduler
+│   └── scheduler_config.json
+├── text_encoder
+│   ├── config.json
+│   ├── model-00001-of-00004.safetensors
+│   ├── model-00002-of-00004.safetensors
+│   ├── model-00003-of-00004.safetensors
+│   ├── model-00004-of-00004.safetensors
+│   └── model.safetensors.index.json
+├── text_encoder_2
+│   ├── config.json
+│   └── model.safetensors
+├── tokenizer
+│   ├── special_tokens_map.json
+│   ├── tokenizer.json
+│   └── tokenizer_config.json
+├── tokenizer_2
+│   ├── merges.txt
+│   ├── special_tokens_map.json
+│   ├── tokenizer_config.json
+│   └── vocab.json
+└── vae
+    ├── config.json
+    └── diffusion_pytorch_model.safetensors
 ```
 ![image](https://github.com/user-attachments/assets/7230b594-441f-45d9-bd0c-dedf7df11888)
 
