@@ -1,5 +1,10 @@
 # FramePack for ComfyUI
-20250421 Update: Added support for first/last frame image-to-video generation from TTPlanetPig  
+
+**20250506 Update:** Added support for `FramePack_F1`.
+- **Download F1 Workflow (中文)**: [https://www.runninghub.cn/post/1919141028262252546](https://www.runninghub.cn/post/1919141028262252546)
+- **Download F1 Workflow (English)**: [https://www.runninghub.ai/post/1919141028262252546](https://www.runninghub.ai/post/1919141028262252546)
+
+**20250421 Update:** Added support for first/last frame image-to-video generation from TTPlanetPig  
 [TTPlanetPig](https://github.com/TTPlanetPig) https://github.com/lllyasviel/FramePack/pull/167 
 
 ## Online Access
@@ -53,25 +58,37 @@ This is a simple implementation of https://github.com/lllyasviel/FramePack. If t
        local_dir_use_symlinks=False
    )
 
+   # Download FramePackF1_HY model
+   snapshot_download(
+       repo_id="lllyasviel/FramePack_F1_I2V_HY_20250503",
+       local_dir="FramePackF1_HY",
+       ignore_patterns=["transformer/*", "*.git*", "*.log*", "*.md"],
+       local_dir_use_symlinks=False
+   )
+
 3. **Manual Download**
    - HunyuanVideo: [HuggingFace Link](https://huggingface.co/hunyuanvideo-community/HunyuanVideo/tree/main)
    - Flux Redux BFL: [HuggingFace Link](https://huggingface.co/lllyasviel/flux_redux_bfl/tree/main)
    - FramePackI2V: [HuggingFace Link](https://huggingface.co/lllyasviel/FramePackI2V_HY/tree/main)
+   - FramePackF1_HY: [HuggingFace Link](https://huggingface.co/lllyasviel/FramePack_F1_I2V_HY_20250503/tree/main)
 
 4. **File Structure After Download**
 ```
 comfyui/models/
   flux_redux_bfl
   ├── feature_extractor
-  │   └── preprocessor_config.json
+  │   └── preprocessor_config.json
   ├── image_embedder
-  │   ├── config.json
-  │   └── diffusion_pytorch_model.safetensors
+  │   ├── config.json
+  │   └── diffusion_pytorch_model.safetensors
   ├── image_encoder
-  │   ├── config.json
-  │   └── model.safetensors
+  │   ├── config.json
+  │   └── model.safetensors
   ├── model_index.json
   └── README.md
+  FramePackF1_HY
+  ├── config.json  # Example structure, actual files might differ
+  └── diffusion_pytorch_model.safetensors # Example structure
   FramePackI2V_HY
   ├── config.json
   ├── diffusion_pytorch_model-00001-of-00003.safetensors
@@ -84,35 +101,80 @@ comfyui/models/
   ├── model_index.json
   ├── README.md
   ├── scheduler
-  │   └── scheduler_config.json
+  │   └── scheduler_config.json
   ├── text_encoder
-  │   ├── config.json
-  │   ├── model-00001-of-00004.safetensors
-  │   ├── model-00002-of-00004.safetensors
-  │   ├── model-00003-of-00004.safetensors
-  │   ├── model-00004-of-00004.safetensors
-  │   └── model.safetensors.index.json
+  │   ├── config.json
+  │   ├── model-00001-of-00004.safetensors
+  │   ├── model-00002-of-00004.safetensors
+  │   ├── model-00003-of-00004.safetensors
+  │   ├── model-00004-of-00004.safetensors
+  │   └── model.safetensors.index.json
   ├── text_encoder_2
-  │   ├── config.json
-  │   └── model.safetensors
+  │   ├── config.json
+  │   └── model.safetensors
   ├── tokenizer
-  │   ├── special_tokens_map.json
-  │   ├── tokenizer_config.json
-  │   └── tokenizer.json
+  │   ├── special_tokens_map.json
+  │   ├── tokenizer_config.json
+  │   └── tokenizer.json
   ├── tokenizer_2
-  │   ├── merges.txt
-  │   ├── special_tokens_map.json
-  │   ├── tokenizer_config.json
-  │   └── vocab.json
+  │   ├── merges.txt
+  │   ├── special_tokens_map.json
+  │   ├── tokenizer_config.json
+  │   └── vocab.json
   └── vae
       ├── config.json
       └── diffusion_pytorch_model.safetensors
 ```
+
 ## Example:
-
-
-https://github.com/user-attachments/assets/4378bb8c-a8f4-4f16-a835-cde976c6144e
-
-
-![image](https://github.com/user-attachments/assets/ea936caf-c0ca-48f4-af20-64090771d382)
-
+```
+comfyui/models/
+  flux_redux_bfl
+  ├── feature_extractor
+  │   └── preprocessor_config.json
+  ├── image_embedder
+  │   ├── config.json
+  │   └── diffusion_pytorch_model.safetensors
+  ├── image_encoder
+  │   ├── config.json
+  │   └── model.safetensors
+  ├── model_index.json
+  └── README.md
+  FramePackF1_HY
+  ├── config.json  # Example structure, actual files might differ
+  └── diffusion_pytorch_model.safetensors # Example structure
+  FramePackI2V_HY
+  ├── config.json
+  ├── diffusion_pytorch_model-00001-of-00003.safetensors
+  ├── diffusion_pytorch_model-00002-of-00003.safetensors
+  ├── diffusion_pytorch_model-00003-of-00003.safetensors
+  ├── diffusion_pytorch_model.safetensors.index.json
+  └── README.md
+  HunyuanVideo
+  ├── config.json
+  ├── model_index.json
+  ├── README.md
+  ├── scheduler
+  │   └── scheduler_config.json
+  ├── text_encoder
+  │   ├── config.json
+  │   ├── model-00001-of-00004.safetensors
+  │   ├── model-00002-of-00004.safetensors
+  │   ├── model-00003-of-00004.safetensors
+  │   ├── model-00004-of-00004.safetensors
+  │   └── model.safetensors.index.json
+  ├── text_encoder_2
+  │   ├── config.json
+  │   └── model.safetensors
+  ├── tokenizer
+  │   ├── special_tokens_map.json
+  │   ├── tokenizer_config.json
+  │   └── tokenizer.json
+  ├── tokenizer_2
+  │   ├── merges.txt
+  │   ├── special_tokens_map.json
+  │   ├── tokenizer_config.json
+  │   └── vocab.json
+  └── vae
+      ├── config.json
+      └── diffusion_pytorch_model.safetensors

@@ -1,7 +1,12 @@
-accelerate>=1.6.0
+torch
+torchvision
+numpy
+Pillow
 diffusers>=0.33.1
 transformers>=4.46.2
-scipy>=1.12.0
-torchsde>=0.2.6
 einops
 safetensors
+accelerate>=1.6.0
+scipy>=1.12.0
+torchsde>=0.2.6
+opencv-python
